@@ -1,11 +1,12 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using VstsRestApiSamples.BuildDefinitions;
+﻿using System;
 using System.Net;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using VstsRestApiSamples.Artifacts;
 
-namespace VstsRestApiSamples.Tests.BuildDefinitions
+namespace VstsRestApiSamples.Tests.Artifacts
 {
     [TestClass]
-    public class BuildTest
+    public class ArtifactTest
     {
         private IConfiguration _configuration = new Configuration();
 
@@ -22,13 +23,13 @@ namespace VstsRestApiSamples.Tests.BuildDefinitions
         }
 
         [TestMethod, TestCategory("REST API")]
-        public void BuildDefintions_GetListOfBuildDefinitions_Success()
+        public void Artifact_GetListOfArtifacts_Success()
         {
             // arrange
-            BuildDefinition request = new BuildDefinition(_configuration);
+            Artifact request = new Artifact(_configuration);
 
             // act
-            var response = request.GetListOfBuildDefinitions(_configuration.Project);
+            var response = request.GetListOfArtifacts(_configuration.Project, _configuration.Build);
 
             // assert
             Assert.AreEqual(HttpStatusCode.OK, response.HttpStatusCode);

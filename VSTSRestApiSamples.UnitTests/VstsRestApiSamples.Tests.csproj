@@ -61,7 +61,9 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="Build2\BuildTest.cs" />
+    <Compile Include="Artifacts\ArtifactTest.cs" />
+    <Compile Include="BuildDefinitions\BuildDefinitionTest.cs" />
+    <Compile Include="Builds\BuildTest.cs" />
     <Compile Include="Configuration.cs" />
     <Compile Include="GettingStarted\AuthenticationTest.cs" />
     <Compile Include="Git\GitRepositoryTest.cs" />

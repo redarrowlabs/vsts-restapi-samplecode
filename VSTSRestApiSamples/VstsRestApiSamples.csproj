@@ -48,12 +48,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Artifacts\Artifact.cs" />
     <Compile Include="BuildDefinitions\BuildDefinition.cs" />
+    <Compile Include="Builds\Build.cs" />
     <Compile Include="Configuration.cs" />
     <Compile Include="GettingStarted\Authentication.cs" />
     <Compile Include="Git\Repositories.cs" />
     <Compile Include="IConfiguration.cs" />
     <Compile Include="ProjectsAndTeams\Processes.cs" />
+    <Compile Include="ViewModels\Artifacts\GetListOfArtifactsResponse.cs" />
+    <Compile Include="ViewModels\Builds\GetListOfBuildsResponse.cs" />
     <Compile Include="ViewModels\Git\GetAllRepositoriesResponse.cs" />
     <Compile Include="ViewModels\Git\GetCommitsByRepositoryIdResponse.cs" />
     <Compile Include="ViewModels\Git\GetDiffsByRepositoryIdResponse.cs" />

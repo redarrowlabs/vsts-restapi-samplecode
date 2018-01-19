@@ -18,5 +18,7 @@ namespace VstsRestApiSamples
         string GitRepositoryId { get; set; }
         string GitTargetVersionBranch { get; set; }
         string GitBaseVersionBranch { get; set; }
+        int BuildDefinition { get; set; }
+        int Build { get; set; }
     }
 }

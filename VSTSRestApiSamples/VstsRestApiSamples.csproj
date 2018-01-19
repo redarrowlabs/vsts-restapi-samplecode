@@ -48,7 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Build2\Build.cs" />
+    <Compile Include="BuildDefinitions\BuildDefinition.cs" />
     <Compile Include="Configuration.cs" />
     <Compile Include="GettingStarted\Authentication.cs" />
     <Compile Include="Git\Repositories.cs" />
@@ -75,7 +75,7 @@
     <Compile Include="WorkItemTracking\Queries.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
-    <Compile Include="ViewModels\Build\BuildGetListofBuildDefinitionsResponse.cs" />
+    <Compile Include="ViewModels\BuildDefinitions\BuildGetListofBuildDefinitionsResponse.cs" />
     <Compile Include="ViewModels\ProjectsAndTeams\GetProcessResponse.cs" />
     <Compile Include="ViewModels\ProjectsAndTeams\ListofProcessesResponse.cs" />
     <Compile Include="ViewModels\WorkItemTracking\BatchOfWorkItemLinksResponse.cs" />

@@ -9,8 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>VstsRestApiSamples</RootNamespace>
     <AssemblyName>VstsRestApiSamples</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -30,16 +31,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3-beta1\lib\net45\System.Net.Http.Formatting.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -48,12 +41,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Build2\Build.cs" />
+    <Compile Include="Artifacts\Artifact.cs" />
+    <Compile Include="BuildDefinitions\BuildDefinition.cs" />
+    <Compile Include="Builds\Build.cs" />
     <Compile Include="Configuration.cs" />
     <Compile Include="GettingStarted\Authentication.cs" />
     <Compile Include="Git\Repositories.cs" />
     <Compile Include="IConfiguration.cs" />
     <Compile Include="ProjectsAndTeams\Processes.cs" />
+    <Compile Include="ViewModels\Artifacts\GetListOfArtifactsResponse.cs" />
+    <Compile Include="ViewModels\Builds\GetListOfBuildsResponse.cs" />
     <Compile Include="ViewModels\Git\GetAllRepositoriesResponse.cs" />
     <Compile Include="ViewModels\Git\GetCommitsByRepositoryIdResponse.cs" />
     <Compile Include="ViewModels\Git\GetDiffsByRepositoryIdResponse.cs" />
@@ -75,7 +72,7 @@
     <Compile Include="WorkItemTracking\Queries.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
-    <Compile Include="ViewModels\Build\BuildGetListofBuildDefinitionsResponse.cs" />
+    <Compile Include="ViewModels\BuildDefinitions\BuildGetListofBuildDefinitionsResponse.cs" />
     <Compile Include="ViewModels\ProjectsAndTeams\GetProcessResponse.cs" />
     <Compile Include="ViewModels\ProjectsAndTeams\ListofProcessesResponse.cs" />
     <Compile Include="ViewModels\WorkItemTracking\BatchOfWorkItemLinksResponse.cs" />
@@ -99,9 +96,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNet.WebApi.Client">
+      <Version>5.2.6</Version>
+    </PackageReference>
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>11.0.2</Version>
+    </PackageReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -17,5 +17,7 @@
         public string GitRepositoryId { get; set; }
         public string GitTargetVersionBranch { get; set; }
         public string GitBaseVersionBranch { get; set; }
+        public int BuildDefinition { get; set; }
+        public int Build { get; set; }
     }
 }

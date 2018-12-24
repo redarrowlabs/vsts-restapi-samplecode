@@ -1,8 +1,8 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using VstsRestApiSamples.Build2;
-using System.Net;
+﻿using System.Net;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using VstsRestApiSamples.Builds;
 
-namespace VstsRestApiSamples.Tests.Build2
+namespace VstsRestApiSamples.Tests.Builds
 {
     [TestClass]
     public class BuildTest
@@ -22,13 +22,13 @@ namespace VstsRestApiSamples.Tests.Build2
         }
 
         [TestMethod, TestCategory("REST API")]
-        public void Build_Defintions_GetListOfBuildDefinitions_Success()
+        public void Build_GetListOfBuilds_Success()
         {
             // arrange
             Build request = new Build(_configuration);
 
             // act
-            var response = request.GetListOfBuildDefinitions(_configuration.Project);
+            var response = request.GetListOfBuilds(_configuration.Project, _configuration.BuildDefinition);
 
             // assert
             Assert.AreEqual(HttpStatusCode.OK, response.HttpStatusCode);

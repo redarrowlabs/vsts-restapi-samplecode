@@ -1,16 +1,16 @@
 ﻿using System;
 using System.Net.Http;
 using System.Net.Http.Headers;
-using VstsRestApiSamples.ViewModels.Build;
+using VstsRestApiSamples.ViewModels.BuildDefinitions;
 
-namespace VstsRestApiSamples.Build2
+namespace VstsRestApiSamples.BuildDefinitions
 {
-    public class Build
+    public class BuildDefinition
     {
         readonly IConfiguration _configuration;
         readonly string _credentials;  
 
-        public Build(IConfiguration configuration)
+        public BuildDefinition(IConfiguration configuration)
         {
             _configuration = configuration;
             _credentials = Convert.ToBase64String(System.Text.ASCIIEncoding.ASCII.GetBytes(string.Format("{0}:{1}", "", _configuration.PersonalAccessToken)));

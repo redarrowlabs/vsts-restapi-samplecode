@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace VstsRestApiSamples.ViewModels.Build
+namespace VstsRestApiSamples.ViewModels.BuildDefinitions
 {
     public class BuildGetListofBuildDefinitionsResponse
     {
